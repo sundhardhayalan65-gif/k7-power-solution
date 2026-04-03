@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://k7powersolution.in/sitemap.xml

@@ -1,0 +1,12 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist/public"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA routing — send all paths to index.html so wouter handles them
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
