@@ -225,28 +225,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Mid-page CTA */}
-          <div className="mt-14 rounded-2xl bg-slate-50 border border-slate-100 p-7 md:p-9 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="font-bold text-gray-900 text-xl">Not sure what you need?</p>
-              <p className="text-gray-500 text-sm mt-1.5">Tell us what's happening — we'll diagnose it and give you a free, no-obligation quote.</p>
-            </div>
-            <div className="flex gap-3 shrink-0">
-              <a href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold gap-2 h-11 px-6 hover:scale-[1.02] transition-transform">
-                  <WhatsAppIcon size={18} className="text-white" />
-                  Chat on WhatsApp
-                </Button>
-              </a>
-              <a href="tel:+919600571801">
-                <Button variant="outline" className="gap-2 h-11 px-6 font-semibold">
-                  <Phone className="w-4 h-4" />
-                  Call
-                </Button>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -339,15 +317,6 @@ export default function Home() {
             <div className="text-sm text-gray-600 text-center sm:text-left">
               <p className="font-semibold text-gray-900">Rated Excellent in Puducherry</p>
               <p className="mt-1 text-gray-500">Based on Google, Just Dial &amp; word-of-mouth reviews</p>
-              <a
-                href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 text-blue-700 font-semibold text-sm hover:underline"
-              >
-                <WhatsAppIcon size={14} className="text-blue-700" />
-                Talk to us today
-              </a>
             </div>
           </div>
         </div>
