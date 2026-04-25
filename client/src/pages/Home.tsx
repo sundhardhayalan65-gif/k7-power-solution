@@ -420,15 +420,6 @@ export default function Home() {
             <div className="text-sm text-gray-600 text-center sm:text-left">
               <p className="font-semibold text-gray-900">Rated Excellent in Puducherry</p>
               <p className="mt-1 text-gray-500">Based on Google, Just Dial &amp; word-of-mouth reviews</p>
-              <a
-                href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-2 text-blue-700 font-semibold text-sm hover:underline"
-              >
-                <WhatsAppIcon size={14} className="text-blue-700" />
-                Talk to us today
-              </a>
             </div>
           </motion.div>
         </div>
