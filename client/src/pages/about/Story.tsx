@@ -1,6 +1,15 @@
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import MobileCTA from "@/components/MobileCTA";
 import SEO from "@/components/SEO";
+import { fadeUp, stagger, slideLeft, viewport } from "@/lib/animations";
+
+const paragraphs = [
+  "K7 Power Solution was established in Puducherry with one purpose: to make reliable power backup accessible to every home and business in the region.",
+  "What started as a small inverter repair shop has grown, over 15+ years, into one of Puducherry's most trusted names in power backup solutions. We've served thousands of customers — from families tired of power cuts to businesses that simply cannot afford downtime.",
+  "We are an authorised dealer for all major inverter and battery brands including Exide, Amaron, Luminous, Microtek, V-Guard, and Livguard. Every product we sell is genuine, every installation is done by certified technicians, and every customer gets our full after-sales support.",
+  "Our commitment is simple: give you the best solution at a fair price, and stand behind our work long after the sale.",
+];
 
 export default function Story() {
   return (
@@ -18,13 +27,27 @@ export default function Story() {
       />
       <Navbar isScrolled={true} />
       <div className="pt-28 pb-20 container max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">K7 Power Solution — Puducherry's Inverter & Battery Experts Since 2009</h1>
-        <div className="space-y-5 text-gray-600 text-base leading-relaxed">
-          <p>K7 Power Solution was established in Puducherry with one purpose: to make reliable power backup accessible to every home and business in the region.</p>
-          <p>What started as a small inverter repair shop has grown, over 15+ years, into one of Puducherry's most trusted names in power backup solutions. We've served thousands of customers — from families tired of power cuts to businesses that simply cannot afford downtime.</p>
-          <p>We are an authorised dealer for all major inverter and battery brands including Exide, Amaron, Luminous, Microtek, V-Guard, and Livguard. Every product we sell is genuine, every installation is done by certified technicians, and every customer gets our full after-sales support.</p>
-          <p>Our commitment is simple: give you the best solution at a fair price, and stand behind our work long after the sale.</p>
-        </div>
+        <motion.h1
+          className="text-4xl font-bold mb-6"
+          initial="hidden"
+          animate="visible"
+          variants={slideLeft}
+        >
+          K7 Power Solution — Puducherry's Inverter & Battery Experts Since 2009
+        </motion.h1>
+
+        <motion.div
+          className="space-y-5 text-gray-600 text-base leading-relaxed"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+        >
+          {paragraphs.map((text, i) => (
+            <motion.p key={i} variants={fadeUp}>
+              {text}
+            </motion.p>
+          ))}
+        </motion.div>
       </div>
       <MobileCTA />
     </div>
