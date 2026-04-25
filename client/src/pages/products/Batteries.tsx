@@ -1,8 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Battery } from "lucide-react";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import MobileCTA from "@/components/MobileCTA";
 import SEO from "@/components/SEO";
+import { fadeUp, stagger, slideLeft, viewport } from "@/lib/animations";
 
 const batteries = [
   { brand: "Exide", model: "Inva Tubular IT500", capacity: "150Ah / 12V", price: "₹13,500" },
@@ -29,24 +31,50 @@ export default function Batteries() {
       />
       <Navbar isScrolled={true} />
       <div className="pt-28 pb-20 container max-w-5xl mx-auto">
-        <div className="flex items-center gap-3 mb-4">
+        <motion.div
+          className="flex items-center gap-3 mb-4"
+          initial="hidden"
+          animate="visible"
+          variants={slideLeft}
+        >
           <Battery className="w-8 h-8 text-blue-700" />
           <h1 className="text-4xl font-bold">Inverter Batteries for Sale in Puducherry</h1>
-        </div>
-        <p className="text-lg text-gray-600 mb-10">Buy Exide, Amaron and Livguard inverter batteries in Puducherry from K7 Power Solution — authorised dealer with doorstep delivery and installation. All batteries carry manufacturer warranty.</p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </motion.div>
+
+        <motion.p
+          className="text-lg text-gray-600 mb-10"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+        >
+          Buy Exide, Amaron and Livguard inverter batteries in Puducherry from K7 Power Solution — authorised dealer with doorstep delivery and installation. All batteries carry manufacturer warranty.
+        </motion.p>
+
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={stagger}
+        >
           {batteries.map((item, i) => (
-            <Card key={i} className="p-6 hover:shadow-lg transition-shadow border border-gray-200">
-              <div className="text-xs font-semibold text-blue-700 uppercase mb-2">{item.brand}</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">{item.model}</h3>
-              <p className="text-sm text-gray-500 mb-4">{item.capacity}</p>
-              <div className="flex items-center justify-between">
-                <span className="text-xl font-bold text-blue-700">{item.price}</span>
-                <a href="tel:+919600571801" className="text-sm font-medium text-blue-700 hover:underline">Call for quote</a>
-              </div>
-            </Card>
+            <motion.div
+              key={i}
+              variants={fadeUp}
+              whileHover={{ y: -6, boxShadow: "0 16px 40px -12px rgba(0,0,0,0.12)" }}
+              transition={{ type: "spring", stiffness: 350, damping: 22 }}
+            >
+              <Card className="p-6 border border-gray-200 h-full">
+                <div className="text-xs font-semibold text-blue-700 uppercase mb-2">{item.brand}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-1">{item.model}</h3>
+                <p className="text-sm text-gray-500 mb-4">{item.capacity}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xl font-bold text-blue-700">{item.price}</span>
+                  <a href="tel:+919600571801" className="text-sm font-medium text-blue-700 hover:underline">Call for quote</a>
+                </div>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <MobileCTA />
     </div>
