@@ -200,7 +200,7 @@ export default function Home() {
         <div className="border-t border-slate-700/60 bg-slate-900/60">
           <div className="container">
             <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-700/60"
+              className="grid grid-cols-2 md:grid-cols-4 md:divide-x divide-slate-700/60"
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
@@ -274,15 +274,15 @@ export default function Home() {
               <p className="font-bold text-gray-900 text-xl">Not sure what you need?</p>
               <p className="text-gray-500 text-sm mt-1.5">Tell us what's happening — we'll diagnose it and give you a free, no-obligation quote.</p>
             </div>
-            <div className="flex gap-3 shrink-0">
-              <a href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold gap-2 h-11 px-6 hover:scale-[1.02] transition-transform">
+            <div className="flex gap-3 w-full md:w-auto md:shrink-0">
+              <a href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery" target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none">
+                <Button className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold gap-2 h-11 px-6 hover:scale-[1.02] transition-transform">
                   <WhatsAppIcon size={18} className="text-white" />
                   Chat on WhatsApp
                 </Button>
               </a>
-              <a href="tel:+919600571801">
-                <Button variant="outline" className="gap-2 h-11 px-6 font-semibold">
+              <a href="tel:+919600571801" className="flex-1 md:flex-none">
+                <Button variant="outline" className="w-full gap-2 h-11 px-6 font-semibold">
                   <Phone className="w-4 h-4" />
                   Call
                 </Button>
@@ -536,15 +536,15 @@ export default function Home() {
                   <p className="text-sm text-orange-700 mt-0.5">Book now to secure your same-day visit slot.</p>
                 </div>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a href="https://wa.me/919600571801?text=I%20would%20like%20to%20book%20a%20visit" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold gap-2 h-11 px-6 hover:scale-[1.02] transition-transform">
+                  <Button className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold gap-2 h-11 px-6 hover:scale-[1.02] transition-transform">
                     <WhatsAppIcon size={18} className="text-white" />
                     Book via WhatsApp
                   </Button>
                 </a>
                 <a href="tel:+919600571801">
-                  <Button variant="outline" className="gap-2 h-11 px-6 font-semibold">
+                  <Button variant="outline" className="w-full sm:w-auto gap-2 h-11 px-6 font-semibold">
                     <Phone className="w-4 h-4" />
                     Call Us
                   </Button>
@@ -690,6 +690,20 @@ export default function Home() {
               Book now to secure your same-day inverter and battery service.
               Our technicians are available across Puducherry — don't wait in the dark.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="https://wa.me/919600571801?text=Hi%2C%20I%20need%20help%20with%20my%20inverter%2Fbattery" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-orange-600 hover:bg-orange-50 font-bold gap-2 h-13 px-8 hover:scale-[1.02] transition-transform shadow-lg">
+                  <WhatsAppIcon size={20} className="text-[#25D366]" />
+                  WhatsApp for Free Quote
+                </Button>
+              </a>
+              <a href="tel:+919600571801">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10 hover:text-white font-semibold gap-2 h-13 px-8">
+                  <Phone className="w-5 h-5" />
+                  +91 9600571801
+                </Button>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

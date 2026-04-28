@@ -275,8 +275,9 @@ export default function Navbar({ isScrolled }: { isScrolled: boolean }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp us"
+                className="flex-1"
               >
-                <Button size="sm" className="bg-[#25D366] hover:bg-[#20bd5a] gap-1.5 font-medium text-white">
+                <Button size="sm" className="w-full bg-[#25D366] hover:bg-[#20bd5a] gap-1.5 font-medium text-white">
                   <WhatsAppIcon size={14} className="text-white" /> WhatsApp Now
                 </Button>
               </a>
